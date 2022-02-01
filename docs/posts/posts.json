@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2022-02-01-hello-world/",
+    "title": "Hello World",
+    "description": "This is the first post and a short description of the post.",
+    "author": [
+      {
+        "name": "Ethan Nguyen",
+        "url": "https://example.com/"
+      }
+    ],
+    "date": "2022-02-01",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-02-01T09:54:52-08:00",
+    "input_file": {}
+  }
+]
