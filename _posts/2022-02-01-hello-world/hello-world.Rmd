@@ -4,7 +4,7 @@ description: |
   A short description of the post. 
 author:
   - name: Ethan Nguyen
-    url: https://example.com/
+    url: https://github.com/ethanhn11
 date: 2022-02-01
 output:
   distill::distill_article:
@@ -16,6 +16,8 @@ draft: false
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Sample blog post.
 
 Distill is a publication format for scientific and technical writing, native to the web.
 

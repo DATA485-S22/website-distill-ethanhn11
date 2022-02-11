@@ -1,0 +1,51 @@
+---
+title: "Something I Found Interesting: The Elo Rating System"
+description: |
+  Using the Elo system to predict the outcome of games
+author:
+  - name: Ethan Nguyen
+    url: https://github.com/ethanhn11
+date: 2022-02-10
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Something I found interesting that I recently learned about in the realm of data science is the Elo rating system and how while being relatively simple, it can be used to predict the outcome of a two-player game. I have always been vaguely familiar with the Elo scheme hearing the term here and there, but only recently did I learn a little bit about its inner workings.
+
+## Overview
+
+The Elo rating system was developed by Arpad Elo and was used as a way to measure how good a particular chess player is. The basic idea behind Elo is that each chess player gets assigned some starting points to represent their skill; if they win a match they take points from the opponent and if they lose they give up points to their opponents. The difference in points going into a match between two players is used to predict the outcome of the game. When two players with a different amount of points play, the player with the lower amount of points at the time of the match has the opportunity to gain more points. For example, if Player A was an underdog going into the match against Player B (i.e. A has fewer points than B), if Player A wins, A might take 32 points from B while if B wins, B might only take 10 points from A. 
+
+While it was initially developed for chess, the Elo rating system has been applied more broadly to any two-player game as a way to rank how good each player is and to predict the outcome of matches. The one application of the Elo system that got me interested in learning more about it was [FiveThirtyEight's NFL predictions](https://projects.fivethirtyeight.com/2021-nfl-predictions/), which uses a slightly modified version of the Elo system to predict the outcome of football games.
+
+## Implementation
+
+This section is a summary of [singingbanana's youtube video](https://www.youtube.com/watch?v=AsYfbmp0To0) on the Elo system.
+
+Baked into the Elo calculations is the idea that a difference of 400 points between players means that a player is 10 times more likely to win, and an 800 point difference means that a player is 100 times more likely to win.
+
+Expressed as a formula, the probability of a player A winning is written as
+$$P(A \ wins) = \frac{1}{1 + 10^{\frac{R_B - R_A}{400}}}$$
+where $R_B$ and $R_A$is the ranking (or amount of points) of player B and player A respectively. Using this formula, the Elo system can be used to predict the outcome of a game; e.g. if player A and player B have the same ranking, the probability of A winning 1/2.
+
+The second component of the Elo system is how to update each player's ranking after the game. This formula is expressed as: 
+$$new \ rating = old \ rating + 32(score - expected \ score)$$
+where the score is the result of the game (0 for loss, 1 for win) and the expected score was the previously calculated probability that the player would win. The 32 in this formula represents the maximum amount of points a player could win/lose in a game and is an "arbitrary" choice.
+
+## Limitation
+
+The simplistic nature of using the Elo system means that when using it as a model to predict the outcome of games, a lot of potentially useful variables are going to be ignored. Without making any modification to the "base" Elo system, the only thing that Elo is using to make predictions is the history of matches of both players.
+
+Some modifications can be used to enhance Elo as a predictive model. FiveThirtyEight details some of their modifications to their NFL Elo predictions [here](https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/). One that I find particularly interesting is the home-field adjustment which gives the home time additional Elo points based on how far the visiting team had to travel.
+
+## Conclusion
+
+In conclusion, the Elo rating system can be used as a model to predict the outcome of any two-player game. Though some modifications can be made to the base formulas, Elo remains a relatively simple model that mostly uses the history of players' performance to predict future performances. 
+  
+

@@ -1,6 +1,6 @@
-name: "Sample distill website"
-title: "My Blog"
-description: practice with distill website
+name: "Ethan Nguyen"
+title: "Ethan Nguyen"
+description: my personal website
   My Blog
 output_dir: "docs"
 navbar:
