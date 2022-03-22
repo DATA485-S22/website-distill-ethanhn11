@@ -1,0 +1,79 @@
+---
+title: "Linear Regression in Tidymodels"
+description: |
+  A sample walkthrough using the mtcars dataset
+author:
+  - name: Ethan Nguyen
+    url: https://github.com/ethanhn11
+date: 2022-03-19
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In this blog post, I will walkthrough how to use the R library `tidymodels` in order to apply a linear regression model to a dataset. The dataset I will be using is called `mtcars` which is one of the many dataset that is built into R by default. `mtcars` contains observations of 32 cars that were built between 1973 and 1974; there are 11 variables that describe features of each observation such as its miles per gallon, its weight, the number of cylinders, etc. Side note: since `mtcars` is a built in dataset, running `?mtcars` will bring up some useful documentation about the dataset.
+
+## Setup
+
+The very first step to using `tidymodels` is to first import the `tidymodels` library into our work environment:
+
+```{r echo = TRUE}
+library(tidymodels)
+```
+
+If this is your first time working with `tidymodels`, remember to first install the package with `install_package('tidymodels')`.
+
+After that, we will then create a regression model object known as the parsnip specification. This is done by calling the `linear_reg()` function and piping that into `set_mode()` as shown below: 
+
+```{r echo = TRUE}
+lm_spec <- linear_reg() %>%
+  set_mode("regression")
+```
+
+## Fitting the Model
+
+With the parsnip specification set up, we can now fit the model by piping the model into the `fit()` function. This function takes a  linear regression formula as the first argument and the dataset as a keyword argument.
+
+The basic format of the formula for a linear regression is $y \sim x_1 + x_2 + ... + x_i$ where y is the explanatory variable and x are the response variables. For example, using the `mtcars` dataset, if we wanted to create a linear regression formula to predict a car's mpg given the number of cylinders and the car's weight, the formula would look like `mpg ~ cyl + wt`.
+
+Applying everything mentioned above we get:
+
+```{r echo = TRUE}
+lm_fit <- lm_spec %>%
+  fit(mpg ~ cyl + wt, data = mtcars)
+```
+
+Note that the `fit()` function returns another object, in the example, we are setting that returned object to the `lm_fit` variable.
+
+## Viewing and Interpreting  the Model
+
+Now that we have the fitted model object, there are many different ways to view the specific values of the model. One of the easier ways to view the result is to use the `tidy()` function and passing in the fit object as an argument.
+
+```{r echo = TRUE}
+tidy(lm_fit)
+```
+
+This table means that the linear regression model to predict a car's miles per gallon can be expressed as:
+
+$$\hat{mpg} = 39.7 - 1.51 * cyl - 3.19 * wt$$
+
+To get specifics on how well the model is fitted, we can use the `glance()` function:
+
+```{r echo = TRUE}
+glance(lm_fit)
+```
+
+The resulting $r^2$ value means that the model we just fitted explains 83% of the variance in miles per gallon. 
+
+## Conclusion
+
+And that's it, we have successfully fitted a linear regression model to predict a car's mpg! To briefly summarize the steps taken, we
+
+1. first, create a specification object
+2. then called the `fit()` function and specified the regression formula
+3. and lastly, viewed the results using `tidy()` and `glance()`
