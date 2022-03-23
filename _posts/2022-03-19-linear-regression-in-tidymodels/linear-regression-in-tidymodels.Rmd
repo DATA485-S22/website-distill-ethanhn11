@@ -14,9 +14,22 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
 ```
 
 In this blog post, I will walkthrough how to use the R library `tidymodels` in order to apply a linear regression model to a dataset. The dataset I will be using is called `mtcars` which is one of the many dataset that is built into R by default. `mtcars` contains observations of 32 cars that were built between 1973 and 1974; there are 11 variables that describe features of each observation such as its miles per gallon, its weight, the number of cylinders, etc. Side note: since `mtcars` is a built in dataset, running `?mtcars` will bring up some useful documentation about the dataset.
+
+Before we get started, we can conduct some exploratory data analysis and look at two variables, the number of cylinders (`cyl`) and the weight of the car (`wt`) with respect to the miles per gallon.
+
+```{r echo = TRUE}
+ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = cyl, y = mpg))
+
+ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = wt, y = mpg))
+```
+
+Since both of the variables looks relatively normal with respect to miles per gallon, we are free to proceed with building our linear regression model.
 
 ## Setup
 
