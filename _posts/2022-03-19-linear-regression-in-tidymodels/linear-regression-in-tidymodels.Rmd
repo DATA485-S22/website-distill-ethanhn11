@@ -29,7 +29,7 @@ ggplot(data = mtcars) +
   geom_point(mapping = aes(x = wt, y = mpg))
 ```
 
-Since both of the variables looks relatively normal with respect to miles per gallon, we are free to proceed with building our linear regression model.
+Since both of the variables looks relatively linear with respect to miles per gallon, we are free to proceed with building our linear regression model.
 
 ## Setup
 
