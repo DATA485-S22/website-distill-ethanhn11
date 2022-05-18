@@ -1,0 +1,71 @@
+---
+title: "Examining Targeted Ads"
+description: |
+  An Exercise from R.A.T. Discussion Guide
+author:
+  - name: Joshua Vong and Ethan Nguyen
+date: 2022-05-17
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+As part of the Advance Data Science Course at Chico State, we read the book ["Race After Technology"](https://www.ruhabenjamin.com/race-after-technology) by Ruha Benjamin in order to better understand the real-world impact data science systems can have. In the discussion guide for this book, Rachael Zafer creates the following activity:
+
+> Set a timer for 10 minutes and open a social media app. Keep a tally of the number of ads you encounter during this period of time and the type of ads you see. Compare your list of targeted ads with a peer. What differences and similarities do you notice? 
+ 
+The following are our main takeaways having done this activity ourselves (as well as inviting three friends and family members for additional data points).
+
+
+## Data Collection and Exploration
+
+To begin this exercise we asked everyone to browse through their most used social media site while keeping a running list of any ads they came across, including any duplicate ads. They then sent this list to us.
+
+After collecting the information from everyone, we created two graphs to help us visualize the types of ads that people were seeing. To do this, we created 12 broad categories of ads that we felt captured the industry / product type of the ads. Importing this information into Google sheets, we plotted these categories first with categories per person and then with categories grouped by gender. The raw data of the exercise is attached at the end.
+
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/ad_category_by_person.jpg)
+
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/ad_category_grouped_by_genderjpg.jpg)
+
+
+## Similarities
+
+A similarity in the ads was that there were a couple of ad categories that were "universal". Food and drinks, and electronics / software were the main categories that every person seemed to get (though some got them a lot more in comparison to others). A specific ad that many got (3 out of 5) was for the movie “Doctor Strange in the Multiverse of Madness” which was releasing later that week. 
+
+In general, our findings comport with our understanding of targeted advertising; the types of ads that everyone seems to be seeing all appear to be the kinds of ads that would appeal to most people.
+
+
+## Differences
+
+The more interesting part for us personally in this exercise was looking at the differences in the kinds of ads. The two specific examples are Person 1 and Person 4; no one came close to seeing the amount of clothing based ads as Person 1 and Person 4 had more than double the amount of electronic/software ads than the next highest person. Looking at our graph by gender, the same categories identified (clothing and electronics / software) are also the main categories, along with movies / tv / music, that are drastically different by gender. 
+
+Another interesting difference that we noticed was the number of ads that everyone was seeing, ranging from 0.7 to 2.4 ads per minute. We believe that this is mostly due to the app that is being used. The two highest ads per minute were from Instagram and Reddit; both sites have content that is meant to be consumed relatively quickly meaning users are likely to be scrolling past more ads compared to a site like YouTube where users are more “fixed” on the content.
+
+## Conclusion
+
+Overall we found this exercise to be very interesting; critically examining the ads that we are seeing was not something that we thought a lot about. Despite being aware, going into the exercise, that the internet tends to alter certain search results based on what it thinks we will personally engage with, it was eye opening to see just how well targeted these ads are.
+
+<hr/>
+
+### Raw Data
+
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/rawdata_screenshot.jpg)
+
+### Bios
+
+Joshua Vong
+
+* Undergraduate Computer Science major at Chico State in the Data Science Certificate Program
+* https://data485-s22.github.io/website-distill-Jvong-max/
+
+Ethan Nguyen
+
+* Undergraduate Computer Science major at Chico State in the Data Science Certificate Program
+* https://data485-s22.github.io/website-distill-ethanhn11/
+

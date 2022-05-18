@@ -2,20 +2,19 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "title": "About Me",
+      "description": "Brief description about me",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-20T17:10:31-08:00"
+      "last_modified": "2022-05-18T16:02:56-07:00"
     },
     {
       "path": "index.html",
-      "title": "&quot;Test-Distill-Website&quot;",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "My Blog Posts",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-20T17:10:32-08:00"
+      "last_modified": "2022-05-18T16:02:57-07:00"
     }
   ],
-  "collections": []
+  "collections": ["posts/posts.json"]
 }
