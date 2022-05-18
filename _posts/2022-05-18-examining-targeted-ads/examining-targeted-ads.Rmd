@@ -29,10 +29,9 @@ To begin this exercise we asked everyone to browse through their most used socia
 
 After collecting the information from everyone, we created two graphs to help us visualize the types of ads that people were seeing. To do this, we created 12 broad categories of ads that we felt captured the industry / product type of the ads. Importing this information into Google sheets, we plotted these categories first with categories per person and then with categories grouped by gender. The raw data of the exercise is attached at the end.
 
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/ad_category_by_person.jpg)
 
-![](./../../images/ad_category_by_person.jpg)
-
-![](./../../images/ad_category_grouped_by_genderjpg.jpg)
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/ad_category_grouped_by_genderjpg.jpg)
 
 
 ## Similarities
@@ -56,7 +55,7 @@ Overall we found this exercise to be very interesting; critically examining the 
 
 ### Raw Data
 
-![](./../../images/rawdata_screenshot.jpg)
+![](https://data485-s22.github.io/website-distill-ethanhn11/images/rawdata_screenshot.jpg)
 
 ### Bios
 
